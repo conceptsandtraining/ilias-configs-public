@@ -1,71 +1,31 @@
 ---
 client:
-    #Directory beside the webserver. ILIAS use it to save data or files. e.g. images before upload to the webserver.
-    #Example: /var/www/ilias/data/
-    data_dir: ~/ilias/data
-    #ILIAS is a client based system. Client with this name will be created
-    #Example: ACMECorp
-    name: Example
-    #It is possible to encode passwords in two ways. Enter the one you want to use. Possible encoder are 'md5' and 'bcrypt'
+    name: FiveTwo
     password_encoder: bcrypt
-    #Session life time in minutes. Default is 120.
     session_expire: 120
 database:
-    #Host of your database.
     host: localhost
-    #Port of the database
     port:
-    #Name for the ILIAS database.
     database: ilias
-    #User with permissions to create database / tables
-    user: root
-    #Password for above user
-    password: abcdef
-    #ILIAS supports three database engines. InnoDB, MyISAM, .....
     engine: innodb
-    #Encoding for database
     encoding: utf8_unicode_ci
-    #Should a database be created. Possible option are 1 = create and 0 = no create
     create_db: 1
 language:
-    #Default language ILIAS will use.
     default: en
-    #Install languages user can decide to use. Default language must be listed too!
     available: 
         - en
-        - de
 server:
-    #Url ILIAS could be accessed by web browser
-    #Example: https://www.example.com/ilias
     http_path: https://localhost/ILIAS
-    #Directory on the webserver ILIAS should be installed in
-    #Example: /var/www/html/ilias
-    absolute_path: ~/ilias/ILIAS
-    #Timezone for PHP
     timezone: Europe/Berlin
 setup:
-    #Master password to enter the setup.
     master_password: abcdef
 tools:
-    #ImageMagick is the requested image converter. It is used to create certificates. Enter the installation path
     convert: /usr/bin/convert
-    #Installation path to zip
     zip: /bin/zip
-    #Installation path to unzip
     unzip: /bin/unzip
-    #Installation path to java
     java: /usr/bin/java
 log:
-    #Directory for ILIAS log file (must be writeable for webserver user)
-    #Example: /var/log/ilias/
-    path: ~/ilias/log/
-    #Name of the log file
     file_name: ilias.log
-    #Name of the error log path
-    #Example: /var/log/ilias/error_log/
-    error_log: ~/ilias/error_log/
 git:
-    #URL of your git repository you want to install ILIAS from
     url: https://github.com/ILIAS-eLearning/ILIAS.git
-    #Branch name of the release you want to use
     branch: release_5-2
